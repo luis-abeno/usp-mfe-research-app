@@ -9,8 +9,8 @@
     "prepare": "husky",
     "common": "pnpm --filter common",
     "app": "pnpm --filter host-app-team",
-    "app:product": "pnpm --filter mfe-app-product-team",
-    "app:payment": "pnpm --filter mfe-app-payment-team"
+    "app:janus": "pnpm --filter mfe-app-janus-team",
+    "app:jupiter": "pnpm --filter mfe-app-jupiter-team"
   },
   "keywords": [],
   "author": "",
@@ -45,6 +45,7 @@
     "typescript-eslint": "^8.19.0"
   },
   "dependencies": {
-    "vue-eslint-parser": "^9.4.3"
+    "vue-eslint-parser": "^9.4.3",
+    "vue-router": "^4.5.0"
   }
 }

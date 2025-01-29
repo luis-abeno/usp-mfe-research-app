@@ -1,13 +1,24 @@
-import { isBlank } from 'common';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import HomePage from './pages/HomePage';
+import LoginPage from './pages/LoginPage';
+import Navbar from './components/navbar/Navbar';
+import MFELoader from './components/mfe-loader/MFELoader';
+import DashboardPage from './pages/DashboardPage';
 
-const App = () => {
+const App: React.FC = () => {
   return (
     <>
-      <p>undefined isBlank - {isBlank(undefined) ? 'true' : 'false'}</p>
-      <p>false isBlank - {isBlank(false) ? 'true' : 'false'}</p>
-      <p>true isBlank - {isBlank(true) ? 'true' : 'false'}</p>
-      <p>Empty object isBlank - {isBlank({}) ? 'true' : 'false'}</p>
-      <p>Empty array isBlank - {isBlank([]) ? 'true' : 'false'}</p>
+      <Navbar />
+      <Router>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/protected">
+              <Route path="dashboard" element={<DashboardPage />} />
+              <Route path="janus" element={<MFELoader />} />
+            </Route>
+          </Routes>
+      </Router>
     </>
   );
 };
