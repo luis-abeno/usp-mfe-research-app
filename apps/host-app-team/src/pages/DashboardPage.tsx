@@ -6,7 +6,7 @@ import LineChart from '../components/line-chart/LineChart';
 
 const DashboardPage: React.FC = () => {
     return (
-        <div>
+        <div className="container mx-auto pt-6">
             <h1 className="text-3xl font-bold mb-4">Dashboard</h1>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 <div className="border-l-4 border-blue-500 shadow-md rounded-lg p-6">

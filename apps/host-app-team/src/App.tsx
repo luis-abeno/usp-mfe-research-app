@@ -8,14 +8,15 @@ import DashboardPage from './pages/DashboardPage';
 const App: React.FC = () => {
   return (
     <>
-      <Navbar />
       <Router>
+        <Navbar />
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/protected">
               <Route path="dashboard" element={<DashboardPage />} />
-              <Route path="janus" element={<MFELoader />} />
+              <Route path="janus/*" element={<MFELoader />} />
+              <Route path="jupiter/*" element={<MFELoader />} />
             </Route>
           </Routes>
       </Router>

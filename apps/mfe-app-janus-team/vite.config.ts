@@ -4,7 +4,7 @@ import qiankun from 'vite-plugin-qiankun';
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: process.env.BASE_URL,
+  base: process.env.VITE_BASE_URL,
   plugins: [vue(), qiankun('mfe-janus', {
     useDevMode: true,
   })],

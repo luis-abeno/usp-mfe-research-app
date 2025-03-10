@@ -1,14 +1,14 @@
 <template>
     <nav class="navbar">
-        <ul class="navbar-list">
+        <ul class="navbar-list container mx-auto">
             <li class="navbar-item">
-            <a class="navbar-link" href="protected/janus/">Home</a>
+            <router-link class="navbar-link" to="/">Home</router-link>
             </li>
             <li class="navbar-item">
-            <a class="navbar-link" href="protected/janus/about">Sobre</a>
+            <router-link class="navbar-link" to="/about">Sobre</router-link>
             </li>
             <li class="navbar-item">
-            <a class="navbar-link" href="protected/janus/material">Materiais</a>
+            <router-link class="navbar-link" to="/material">Materiais</router-link>
             </li>
         </ul>
     </nav>
@@ -23,9 +23,6 @@
 .navbar-list {
     list-style-type: none;
     display: flex;
-    gap: 1rem;
-    margin: 0;
-    padding: 0;
 }
 
 .navbar-item {

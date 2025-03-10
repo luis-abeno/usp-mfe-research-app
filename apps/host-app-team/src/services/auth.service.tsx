@@ -1,17 +1,14 @@
+import { authStore } from '../stores/authStore';
+
 class AuthService {
-    private _isLogged: boolean = false;
     private _userName: string = '';
 
     get isLogged(): boolean {
-        if (localStorage.getItem('isLogged')) {
-            this._isLogged = localStorage.getItem('isLogged') === 'true';
-        }
-        return this._isLogged;
+        return authStore.isLogged;
     }
 
     set isLogged(value: boolean) {
-        this._isLogged = value;
-        localStorage.setItem('isLogged', value.toString());
+        authStore.setLogged(value);
     }
 
     get userName(): string {
@@ -23,9 +20,7 @@ class AuthService {
     }
 
     logout() {
-        this.isLogged = false;
-        this.userName = '';
-        localStorage.removeItem('isLogged');
+        authStore.logout();
     }
 }
 

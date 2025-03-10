@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { authService } from '../../services/auth.service';
+import { observer } from 'mobx-react-lite';
+import { useNavigate } from 'react-router-dom';
+import { authStore } from '../../stores/authStore';
 import './Navbar.css'; 
 
-const Navbar: React.FC = () => {
+const Navbar: React.FC = observer(() => {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const navigate = useNavigate();
 
     useEffect(() => {
         const handleScroll = () => {
@@ -21,7 +24,8 @@ const Navbar: React.FC = () => {
     };
 
     const logout = () => {
-        authService.logout();
+        authStore.logout();
+        navigate('/');
     };
 
     return (
@@ -36,7 +40,7 @@ const Navbar: React.FC = () => {
                 <ul className="navbar-menu">
                     <li className="navbar-item"><a href="/">Home</a></li>
                     <li className="navbar-item">
-                        {!authService.isLogged ? (
+                        {!authStore.isLogged ? (
                             <a href="login">Login</a>
                         ) : (
                             <a href="#" onClick={logout}>Logout</a>
@@ -44,7 +48,7 @@ const Navbar: React.FC = () => {
                     </li>
                 </ul>
 
-                {authService.isLogged && (
+                {authStore.isLogged && (
                     <ul className="main-navbar-menu flex gap-4 items-center">
                         <li className="relative">
                             <button id="hamburger-menu" className="focus:outline-none" onClick={toggleMenu}>
@@ -71,6 +75,6 @@ const Navbar: React.FC = () => {
             </nav>
         </div>
     );
-};
+});
 
 export default Navbar;

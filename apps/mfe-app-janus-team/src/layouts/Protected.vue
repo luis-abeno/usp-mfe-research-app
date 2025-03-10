@@ -1,5 +1,5 @@
 <template>
-    <div class="container mx-auto p-4 rounded-lg my-6 bg-white">
+    <div class="rounded-lg">
         <Navbar />
         <router-view />
     </div>

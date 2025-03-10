@@ -5,7 +5,7 @@
                 <div class="bg-black bg-opacity-80 p-8 rounded-lg max-w-lg ml-8">
                     <h1 class="text-4xl font-bold text-white mb-4">Janus</h1>
                     <p class="text-lg text-white mb-4">
-                        Janus é o sistema de pós-graduação da USP, projetado para simplificar e agilizar a gestão dos serviços de pós-graduação.
+                        Janus Home Page
                     </p>
                 </div>
             </div>

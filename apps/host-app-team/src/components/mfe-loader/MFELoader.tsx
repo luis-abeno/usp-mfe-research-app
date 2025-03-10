@@ -10,6 +10,12 @@ const MFELoader: React.FC = () => {
                     container: '#mfe-container',
                     activeRule: '/protected/janus',
                 },
+                {
+                    name: 'mfe-jupiter',
+                    entry: '//localhost:5175',
+                    container: '#mfe-container',
+                    activeRule: '/protected/jupiter',
+                },
             ];
 
             registerMicroApps(microFrontends);
